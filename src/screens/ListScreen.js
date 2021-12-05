@@ -19,13 +19,21 @@ const ListScreen = () => {
   //   ));
   return (
     <FlatList
+      horizontal
+      showsHorizontalScrollIndicator={false}
       keyExtractor={(item, index) => index}
       data={friends}
-      renderItem={({ item, index }) => <Text>{item.name}</Text>}
+      renderItem={({ item, index }) => (
+        <Text style={styles.textStyle}>{item.name}</Text>
+      )}
     />
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  textStyle: {
+    marginVertical: 50,
+  },
+});
 
 export default ListScreen;
